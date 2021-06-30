@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Page</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Edit the Form</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${employee}"
+			method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>ID:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" th:field="*{name}" required /></td>
+				</tr>
+				<tr>
+					<td>D.O.B:</td>
+					<td><input type="date" th:field="*{date}" /></td>
+				</tr>
+				<tr>
+					<td>Gender :</td>
+					<td><input type="radio" th:field="*{gender}" name="male"
+						value="male" /> Male <input type="radio" th:field="*{gender}"
+						name="female" value="female" /> Female <input type="radio"
+						th:field="*{gender}" name="other" value="other" /> Other</td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>

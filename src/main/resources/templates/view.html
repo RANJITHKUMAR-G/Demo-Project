@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Page</title>
+</head>
+<body>
+	<div align="center">
+		<h1>View the Form</h1>
+		<br />
+		<form action="#" th:object="${employee}">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>ID:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" th:field="*{name}" readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td>D.O.B:</td>
+					<td><input type="date" th:field="*{date}" readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td>Gender :</td>
+					<td><input type="radio" th:field="*{gender}" name="male"
+						value="male" disabled /> Male <input type="radio"
+						th:field="*{gender}" name="female" value="female" disabled />
+						Female <input type="radio" th:field="*{gender}" name="other"
+						value="other" disabled /> Other</td>
+				</tr>
+			</table>
+		</form>
+</body>
+</html>

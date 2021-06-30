@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home Page</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Registration Form</h1>
+		<a href="/createNew">Create New</a> &nbsp;&nbsp;&nbsp;&nbsp; <a
+			href="/downloadCsv" class="btn btn-primary">Download</a>
+
+
+		<div align="center">
+			<table class="table" border=1 cellpadding="10">
+				<thead>
+					<tr>
+						<th>Employee ID</th>
+						<th>Name</th>
+						<th>D.O.B</th>
+						<th>Gender</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="employee :${listOfEmployees}">
+						<td th:text="${employee.id}">Employee ID</td>
+						<td th:text="${employee.name}">Name</td>
+						<td th:text="${employee.date}">D.O.B</td>
+						<td th:text="${employee.gender}">Gender</td>
+						<td><a th:href="@{'/view/' + ${employee.id}}">View</a>
+							&nbsp;&nbsp;&nbsp;&nbsp; <a
+							th:href="@{'/edit/' + ${employee.id}}">Edit</a>
+							&nbsp;&nbsp;&nbsp;&nbsp; <a
+							th:href="@{'/delete/' + ${employee.id}}">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
